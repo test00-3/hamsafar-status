@@ -27,8 +27,6 @@
   <div id="links" style="display:none">
     <a class="btn" href="#" id="b_app">📲 اپلیکیشن مسافر</a>
     <a class="btn alt" href="#" id="b_site">🌐 وبسایت</a>
-    <a class="btn alt" href="#" id="b_comp">🏢 پنل شرکت‌ها</a>
-    <a class="btn alt" href="#" id="b_admin">👨‍💼 پنل مدیریت</a>
     <a class="btn alt" href="#" id="b_apk">⬇️ دانلود اپ اندروید (APK)</a>
     <a class="btn alt" href="#" id="b_docs">📚 مستندات</a>
   </div>
@@ -60,7 +58,7 @@
   document.getElementById("dot").className = "dot ok";
   document.getElementById("st").textContent = "فعال";
   document.getElementById("u").textContent = url;
-  const map = {b_app:"/app/", b_site:"/site/", b_comp:"/company/", b_admin:"/admin/", b_apk:"/admin/download/afghan-go.apk", b_docs:"/documentation/"};
+  const map = {b_app:"/app/", b_site:"/site/", b_apk:"/download/afghan-go.apk", b_docs:"/documentation/"};
   document.getElementById("links").style.display = "block";
   for (const id in map) document.getElementById(id).href = url + map[id];
 })();
