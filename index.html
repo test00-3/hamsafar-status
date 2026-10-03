@@ -61,6 +61,16 @@
   const map = {b_app:"/app/", b_site:"/site/", b_apk:"/download", b_docs:"/documentation/"};
   document.getElementById("links").style.display = "block";
   for (const id in map) document.getElementById(id).href = url + map[id];
+
+  // Permanent shareable links: ?go=download | ?go=app | ?go=site | ?go=apk
+  // Auto-redirect to the CURRENT tunnel URL so shared links never die.
+  const go = new URLSearchParams(location.search).get('go');
+  const goMap = { download: '/download', app: '/app/', site: '/site/', apk: '/download/hamsafar.apk' };
+  if (go && goMap[go]) {
+    const el = document.getElementById('st');
+    if (el) el.textContent = 'در حال انتقال...';
+    setTimeout(() => { location.replace(url + goMap[go]); }, 1200);
+  }
 })();
 </script>
 </body>
